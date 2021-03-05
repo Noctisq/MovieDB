@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { setIsLoading, setMovies } from '../redux/movies';
-import { setQuery } from '../redux/query';
+import { setError } from '../redux/error';
 import { API_ENDPOINT_SEARCH, API_ENDPOINT_POPULAR, API_ENDPOINT_TRENDINGMOVIES, API_ENDPOINT_BESTRATED } from '../utils/url';
 import Form from './SearchForm'
 import Movies from './Movies'
 
 const Home = () => {
   const { query } = useSelector((state) => state.query);
-  
-  const [error, setError] = useState({
-    show: false,
-    msg: ''
-  });
+  const { error } = useSelector((state) => state.error);
+
+
 
 
   const dispatch = useDispatch();
@@ -33,40 +31,49 @@ const Home = () => {
   }
 
   const getMoviesQuery = async (query) => {
-
+    
+    console.log(error);
+    dispatch(setIsLoading());
     try {
       const resultsOfQuery = await getMovies(`${API_ENDPOINT_SEARCH + query}`);
 
       if (resultsOfQuery.length > 0) {
+        
+        if (error) dispatch(setError());
         dispatch(setMovies(resultsOfQuery));
-        dispatch(setIsLoading());
+
+
       } else {
-        setError({ show: true, msg: "Movies not found :(" });
-        console.log(error);
+        if (error) return;
+        dispatch(setError());
+
+
       }
 
     } catch (err) {
+      
+      dispatch(setError());
+
       console.log(err);
     }
+    dispatch(setIsLoading());
 
 
   }
 
-
-
   useEffect(() => {
 
-    getMoviesQuery(query);
-    dispatch(setIsLoading());
-  }, [query, getMoviesQuery]);
 
+    getMoviesQuery(query);
+
+
+
+  }, [query]);
 
   return (
     <main>
       <Form />
-
-
-      {error.show ? <h1>Error</h1> : <Movies />}
+      <Movies />
     </main>
   )
 }

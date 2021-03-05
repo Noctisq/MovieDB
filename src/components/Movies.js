@@ -7,15 +7,13 @@ const url =
 
 
 const Movies = () => {
-  const { isLoading, moviesResults } = useSelector((state) => state.movies)
-
-
+ 
+  const { isLoading, moviesResults } = useSelector((state) => state.movies);
   if (isLoading) {
 
     return <div className="loading"></div>
   } else {
-    console.log("dejo de cargar", moviesResults);
-    console.log(isLoading)
+
     return (<section className="movies">
       {
 
@@ -39,4 +37,4 @@ const Movies = () => {
 
 }
 
-export default Movies
+export default Movies;
