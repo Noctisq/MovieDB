@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-const url =
+export const url =
   'https://upload.wikimedia.org/wikipedia/commons/f/fc/No_picture_available.png'
 
 
