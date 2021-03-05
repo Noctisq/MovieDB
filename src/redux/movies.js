@@ -3,45 +3,22 @@ import { createSlice } from '@reduxjs/toolkit'
 export const moviesSlice = createSlice({
     name: 'movies',
     initialState: {
-        trendingMovies: [],
-        popularMovies: [],
-        bestRatedMovies: [],
-        allMovies: [],
-        searchMovies: [],
+        moviesResults: [],
+        isLoading: false
 
     },
     reducers: {
 
-        setAllMovies: (state, action) => {
-            state.allMovies = [...state.allMovies, action.payload]
-            console.log(state.allMovies);
-        },
-        setTrendingMovies: (state, action) => {
-
-            state.trendingMovies = [...state.trendingMovies, action.payload]
-            console.log(state.trendingMovies);
+        setIsLoading: (state) => {
+            state.isLoading = !state.isLoading
         },
 
-        setPopularMovies: (state, action) => {
-
-            state.popularMovies = [...state.popularMovies, action.payload]
-            console.log(state.popularMovies);
-        },
-
-        setBestRatedMovies: (state, action) => {
-
-            state.bestRatedMovies = [...state.bestRatedMovies, action.payload]
-            console.log(state.bestRatedMovies);
-        },
-
-        setSearchedMovies: (state, action) => {
-
-            state.searchMovies = [...state.searchMovies, action.payload]
-            console.log(state.searchMovies);
-        },
+        setMovies: (state, action) => {
+            state.moviesResults = action.payload
+        }
     }
 })
 
-export const { setSearchedMovies, setAllMovies, setTrendingMovies, setPopularMovies, setBestRatedMovies } = moviesSlice.actions
+export const { setIsLoading, setMovies } = moviesSlice.actions
 
 export default moviesSlice.reducer
