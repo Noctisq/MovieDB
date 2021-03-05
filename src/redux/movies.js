@@ -10,10 +10,13 @@ export const moviesSlice = createSlice({
     reducers: {
 
         setIsLoading: (state) => {
+
+            
             state.isLoading = !state.isLoading
         },
 
         setMovies: (state, action) => {
+            
             state.moviesResults = action.payload
         }
     }
