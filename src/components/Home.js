@@ -72,6 +72,7 @@ const Home = () => {
 
   return (
     <main>
+      
       <Form />
       <Movies />
     </main>
