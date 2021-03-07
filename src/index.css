@@ -50,6 +50,37 @@ body {
   
   transition: all 0.3s linear;
 }
+
+progress {
+  border-radius: 7px; 
+  width: 100%;
+ 
+  
+  box-shadow: 1px 1px 4px rgba( 0, 0, 0, 0.2 );
+}
+
+progress::-webkit-progress-bar {
+  background-color: var(--clr-bcg);
+  border-radius: 7px;
+}
+
+progress[class = "100"]::-webkit-progress-value {
+  background-color:#83E620 ;
+  border-radius: 7px;
+  
+}
+progress[class= "70"]::-webkit-progress-value {
+  background-color: #EBCF1A;
+  border-radius: 7px;
+  
+}
+progress[class= "40"]::-webkit-progress-value {
+  background-color: #EB3313;
+  border-radius: 7px;
+  
+}
+
+
 ul {
   list-style-type: none;
 }
@@ -76,6 +107,7 @@ h3 {
 }
 h4 {
   font-size: 0.875rem;
+  margin-bottom: 1rem;
 }
 p {
   margin-bottom: 1.25rem;
@@ -223,8 +255,6 @@ p {
   }
 }
 
-
-
 .single-movie {
   width: 90vw;
   max-width: var(--max-width);
@@ -243,6 +273,7 @@ p {
   line-height: 1.8;
 }
 .btn {
+  margin-left: 5px;
   background: var(--clr-primary);
   color: var(--clr-bcg);
   padding: 0.25rem 0.5rem;
@@ -254,6 +285,41 @@ p {
   letter-spacing: 2px;
   cursor: pointer;
 }
+
+.labelgenre {
+  background: var(--clr-primary);
+  color: var(--clr-bcg);
+  padding: 0.25rem 0.5rem;
+  border-radius: 5px;
+  border-color: transparent;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 5px;
+  
+}
+.labeltime{
+  
+  color: var(--clr-primary);
+  padding: 0.01rem 0.5rem;
+  border-radius: 5px;
+
+  font-weight: bold;
+  letter-spacing: 2px;
+ 
+}
+
+.labeladult {
+  background: #FF000C;
+  color: var(--clr-white);
+  padding: 0.25rem 0.5rem;
+  border-radius: 5px;
+  border-color: transparent;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 5px;
+  
+}
+
 @media screen and (min-width: 992px) {
   .single-movie {
     grid-template-columns: 1fr 2fr;
