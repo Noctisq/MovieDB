@@ -4,8 +4,7 @@ import Home from './components/Home';
 import Movie from './components/SingleMovie';
 
 const App = () => {
-
-
+ //Defining our routes
   return <Switch>
     <Route path="/" exact>
       <Home />

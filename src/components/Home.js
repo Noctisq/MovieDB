@@ -6,13 +6,17 @@ import { API_ENDPOINT_SEARCH } from '../utils/url';
 import Form from './SearchForm'
 import Movies from './Movies'
 
+
+// The main page of the application
 const Home = () => {
+
+  //To handle search and errors of that search
   const { query } = useSelector((state) => state.query);
   const { error } = useSelector((state) => state.error);
 
 
 
-
+  //Redux hook to dispatch action
   const dispatch = useDispatch();
 
 
@@ -60,14 +64,13 @@ const Home = () => {
 
   }
 
+  //Just make renders when the query changes
   useEffect(() => {
-
 
     getMoviesQuery(query);
 
-
-
   }, [query]);
+
 
   return (
     <main>

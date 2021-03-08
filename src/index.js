@@ -6,6 +6,7 @@ import store from './redux/store';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 
+//This is important because we're providing to our app the data of the store
 ReactDOM.render(
 
   <React.StrictMode>
