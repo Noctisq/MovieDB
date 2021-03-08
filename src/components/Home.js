@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, {  useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { setIsLoading, setMovies } from '../redux/movies';
 import { setError } from '../redux/error';
-import { API_ENDPOINT_SEARCH, API_ENDPOINT_POPULAR, API_ENDPOINT_TRENDINGMOVIES, API_ENDPOINT_BESTRATED } from '../utils/url';
+import { API_ENDPOINT_SEARCH } from '../utils/url';
 import Form from './SearchForm'
 import Movies from './Movies'
 
@@ -32,7 +32,6 @@ const Home = () => {
 
   const getMoviesQuery = async (query) => {
     
-    console.log(error);
     dispatch(setIsLoading());
     try {
       const resultsOfQuery = await getMovies(`${API_ENDPOINT_SEARCH + query}`);
