@@ -10,7 +10,7 @@ y ejecutar después:
 ```javascript
 npm run start
 ```
-También crear un archivo .env en la raiz con la variable REACT_APP_MOVIE_API_KEY=<apikey>
+También crear un archivo .env en la raiz con la variable REACT_APP_MOVIE_API_KEY='apikey'
 
 **Recomiendo usar Chrome como navegador puede haber algunos problemas de compatibilidad en cuanto a UI**
 Mis fuentes de información que consulté para el correcto funcionamiento de la aplicación: 
