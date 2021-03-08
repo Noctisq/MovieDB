@@ -14,7 +14,7 @@ También crear un archivo .env en la raiz con la variable REACT_APP_MOVIE_API_KE
 
 **Recomiendo usar Chrome como navegador puede haber algunos problemas de compatibilidad en cuanto a UI**
 ### Mis fuentes de información que consulté para algunos requerimientos: 
-https://css-tricks.com/recreating-the-twitter-heart-animation/
-https://redux-toolkit.js.org/tutorials/quick-start
+- https://css-tricks.com/recreating-the-twitter-heart-animation/
+- https://redux-toolkit.js.org/tutorials/quick-start
 
 Y por último el link para probar la aplicación hosteada: https://noctisqmoviedb.netlify.app/
