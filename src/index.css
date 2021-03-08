@@ -1,24 +1,19 @@
 
 
 
-
+/* Variables */
 :root {
   --clr-bcg: #fff;
   --clr-font: #282c35;
   --clr-primary: #d23669;
-
-  
   --clr-white: #fff;
-  
-  
   --spacing: 0.1rem;
   --radius: 0.25rem;
-  
-  
   --max-width: 1170px;
   
 }
 
+/* Classes to alterning the theme */
 .dark-theme {
   --clr-bcg: #282c35;
   --clr-font: #fff;
@@ -51,11 +46,10 @@ body {
   transition: all 0.3s linear;
 }
 
+
 progress {
   border-radius: 7px; 
   width: 100%;
- 
-  
   box-shadow: 1px 1px 4px rgba( 0, 0, 0, 0.2 );
 }
 
@@ -113,6 +107,7 @@ p {
   margin-bottom: 1.25rem;
   color:  var(--clr-primary);
 }
+
 .nav-center {
   width: 90vw;
   max-width: 600px;

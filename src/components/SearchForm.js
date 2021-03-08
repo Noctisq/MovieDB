@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setQuery } from '../redux/query';
 import { setFavorites,sortMoviesByName, sortMoviesByScore } from '../redux/movies';
 
+//Assign default value for the dark mode
 export const getStorageTheme = () => {
   let theme = 'light-theme';
   if (localStorage.getItem('theme')) {
@@ -27,8 +28,6 @@ const SearchForm = () => {
   };
 
   const orderByName = () => {
-
-
 
     dispatch(sortMoviesByName());
 
@@ -81,6 +80,7 @@ const SearchForm = () => {
 
 
     </div>
+    {/* //Showing error only if the variable error is true */}
     {error && < div className="error">No results found :(</div>}
   </form>)
 }
