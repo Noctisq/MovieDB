@@ -7,7 +7,7 @@ export const url =
 
 
 const Movies = () => {
- 
+
   const { isLoading, moviesResults } = useSelector((state) => state.movies);
   if (isLoading) {
 
@@ -18,14 +18,18 @@ const Movies = () => {
       {
 
         moviesResults.map((movie) => {
-          const { poster_path, id, original_title } = movie
+
+          const { poster_path, id, original_title, vote_average } = movie
           return <Link className="movie" to={`/movies/${id}`} key={id}>
-            <article className="">
+            <article >
               <img alt={original_title} src={poster_path === null ? url : `http://image.tmdb.org/t/p/original/${poster_path}`} />
               <div className="movie-info">
                 <h4 className="title">{original_title}</h4>
-                <p>Movie</p>
+                <p>User Score: {vote_average * 10}%</p>
+                <progress className={vote_average < 5 ? "40" : vote_average < 8 ? "70" : "100"} max="100" value={vote_average * 10} ></progress>
+
               </div>
+
             </article>
           </Link>
         })

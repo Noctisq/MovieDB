@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { setQuery } from '../redux/query';
-const getStorageTheme = () => {
+import { sortMoviesByName, sortMoviesByScore } from '../redux/movies';
+
+export const getStorageTheme = () => {
   let theme = 'light-theme';
   if (localStorage.getItem('theme')) {
     theme = localStorage.getItem('theme');
@@ -14,6 +16,7 @@ const SearchForm = () => {
   const dispatch = useDispatch();
   const { query } = useSelector((state) => state.query);
   const { error } = useSelector((state) => state.error);
+  const { moviesResults } = useSelector((state) => state.movies);
   const [theme, setTheme] = useState(getStorageTheme());
 
   const toggleTheme = () => {
@@ -22,6 +25,21 @@ const SearchForm = () => {
     } else {
       setTheme('light-theme');
     }
+  };
+
+  const orderByName = () => {
+
+
+
+    dispatch(sortMoviesByName());
+
+  };
+
+  const orderByScore = () => {
+
+
+    dispatch(sortMoviesByScore());
+
   };
 
   useEffect(() => {
@@ -35,18 +53,31 @@ const SearchForm = () => {
     <nav>
       <div className="nav-center">
         <h1>Search Movies</h1>
-        <button onClick={toggleTheme} className="btn" >
-          surprise :o
-          </button>
+
+        <input type="text" className="form-input" value={query}
+          onChange={(e) => {
+            dispatch(setQuery(e.target.value));
+          }} />
       </div>
     </nav>
 
 
-    <input type="text" className="form-input" value={query}
-      onChange={(e) => {
-        dispatch(setQuery(e.target.value));
-      }} />
 
+    <div>
+      <button onClick={toggleTheme} className="btn" >
+        ????
+      </button>
+      
+      <button onClick={orderByName} className="btn" >
+        Order by name
+      </button>
+
+      <button onClick={orderByScore} className="btn" >
+        Order by score
+      </button>
+
+
+    </div>
     {error && < div className="error">No results found :(</div>}
   </form>)
 }
