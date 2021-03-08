@@ -13,7 +13,7 @@ npm run start
 También crear un archivo .env en la raiz con la variable REACT_APP_MOVIE_API_KEY='apikey'
 
 **Recomiendo usar Chrome como navegador puede haber algunos problemas de compatibilidad en cuanto a UI**
-Mis fuentes de información que consulté para el correcto funcionamiento de la aplicación: 
+### Mis fuentes de información que consulté para algunos requerimientos: 
 https://css-tricks.com/recreating-the-twitter-heart-animation/
 https://redux-toolkit.js.org/tutorials/quick-start
 
