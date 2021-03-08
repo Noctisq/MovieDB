@@ -4,20 +4,23 @@ export const moviesSlice = createSlice({
     name: 'movies',
     initialState: {
         moviesResults: [],
+       
         isLoading: false
 
     },
     reducers: {
 
         setIsLoading: (state) => {
-
-
             state.isLoading = !state.isLoading
         },
 
         setMovies: (state, action) => {
 
             state.moviesResults = action.payload
+        },
+
+        setFavorites : (state, action) => {
+            state.moviesResults = action.payload;
         },
 
         sortMoviesByName: (state) => {
@@ -37,9 +40,10 @@ export const moviesSlice = createSlice({
         }
 
 
+
     }
 })
 
-export const { setIsLoading, setMovies, sortMoviesByName, sortMoviesByScore } = moviesSlice.actions
+export const { setFavorites, setIsLoading, setMovies, sortMoviesByName, sortMoviesByScore } = moviesSlice.actions
 
 export default moviesSlice.reducer

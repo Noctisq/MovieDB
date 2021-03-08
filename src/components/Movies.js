@@ -22,7 +22,7 @@ const Movies = () => {
           const { poster_path, id, original_title, vote_average } = movie
           return <Link className="movie" to={`/movies/${id}`} key={id}>
             <article >
-              <img alt={original_title} src={poster_path === null ? url : `http://image.tmdb.org/t/p/original/${poster_path}`} />
+              <img loading="lazy" alt={original_title} src={poster_path === null ? url : `http://image.tmdb.org/t/p/original/${poster_path}`} />
               <div className="movie-info">
                 <h4 className="title">{original_title}</h4>
                 <p>User Score: {vote_average * 10}%</p>
