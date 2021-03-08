@@ -4,7 +4,11 @@ import Home from './components/Home';
 import Movie from './components/SingleMovie';
 
 const App = () => {
- //Defining our routes
+  //Defining our routes and init the localStorage
+  if (localStorage.getItem('favorites') === null) {
+    localStorage.setItem('favorites', JSON.stringify([]));
+  };
+  
   return <Switch>
     <Route path="/" exact>
       <Home />

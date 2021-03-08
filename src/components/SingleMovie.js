@@ -65,7 +65,8 @@ const SingleMovie = () => {
 
   const removeFavorites = () => {
     const favorites = JSON.parse(localStorage.getItem('favorites'));
-    const newFavorites = favorites.filter(singleMovie => singleMovie.id === id);
+    const newFavorites = favorites.filter(singleMovie => singleMovie.id != id);
+   
     localStorage.setItem('favorites', JSON.stringify(newFavorites));
   }
 
